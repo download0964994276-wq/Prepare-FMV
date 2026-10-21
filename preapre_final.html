@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Management & Corporate Valuation - Final Exam Study Guide</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --accent: #dbeafe;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar Navigation */
+        aside {
+            width: 280px;
+            background: var(--card-bg);
+            border-right: 1px solid var(--border);
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            overflow-y: auto;
+            padding: 2rem 1.5rem;
+        }
+
+        aside h2 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        aside ul {
+            list-style: none;
+        }
+
+        aside ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        aside ul li a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: block;
+            transition: color 0.2s;
+        }
+
+        aside ul li a:hover {
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        /* Main Content Area */
+        main {
+            margin-left: 280px;
+            flex: 1;
+            padding: 3rem 4rem;
+            max-width: 1000px;
+        }
+
+        header {
+            margin-bottom: 2.5rem;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 1.5rem;
+        }
+
+        header h1 {
+            font-size: 2.25rem;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        /* Search Bar */
+        .search-container {
+            margin-bottom: 2rem;
+        }
+
+        #searchBox {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            outline: none;
+            background: var(--card-bg);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+            transition: border-color 0.2s;
+        }
+
+        #searchBox:focus {
+            border-color: var(--primary);
+        }
+
+        /* Sections & Cards */
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+            margin: 2.5rem 0 1.25rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.25rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            font-size: 1.15rem;
+            color: var(--text-main);
+            margin-bottom: 0.75rem;
+        }
+
+        .card p, .card li {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card ul {
+            padding-left: 1.25rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Formulas & Highlight Boxes */
+        .formula-box {
+            background: var(--accent);
+            border-left: 4px solid var(--primary);
+            padding: 0.75rem 1rem;
+            margin: 0.75rem 0;
+            font-family: monospace;
+            font-size: 1rem;
+            color: var(--primary-dark);
+            border-radius: 0 6px 6px 0;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        th, td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.95rem;
+        }
+
+        th {
+            background-color: var(--accent);
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+            aside {
+                position: relative;
+                width: 100%;
+                height: auto;
+            }
+            main {
+                margin-left: 0;
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar Quick Navigation -->
+    <aside>
+        <h2>Exam Quick Menu</h2>
+        <ul>
+            <li><a href="#foundations">1. Foundations & Goals</a></li>
+            <li><a href="#risk-return">2. Risk, Return & CAPM</a></li>
+            <li><a href="#valuation">3. Valuation & NPV</a></li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main>
+        <header>
+            <h1>Financial Management & Corporate Valuation</h1>
+            <p>Final Exam Comprehensive Study Sheet — Last Minute Review</p>
+        </header>
+
+        <div class="search-container">
+            <input type="text" id="searchBox" placeholder="Search any topic, formula, or keyword (e.g., WACC, Beta, NPV)..." onkeyup="filterCards()">
+        </div>
+
+        <div id="content-container">
+
+            <!-- SECTION 1 -->
+            <h2 id="foundations" class="section-title">1. Core Financial Foundations & Management</h2>
+
+            <div class="card" data-keywords="time value of money tvm present future value discounting compounding">
+                <h3>1. The Concepts of Time Value of Money (TVM)</h3>
+                <p>A dollar today is worth more than a dollar in the future because today's dollar can earn interest or returns over time.</p>
+                <ul>
+                    <li><strong>Present Value (PV):</strong> Current value of a future sum.</li>
+                    <li><strong>Future Value (FV):</strong> Value of a current asset at a specified future date.</li>
+                    <li><strong>Discounting / Compounding:</strong> Moving cash flows backward to present value vs. earning interest forward.</li>
+                </ul>
+            </div>
+
+            <div class="card" data-keywords="current ratio liquidity short term assets liabilities">
+                <h3>2. Current Ratio</h3>
+                <p>Measures a company's ability to cover its short-term obligations (due within 1 year) with short-term assets.</p>
+                <div class="formula-box">Current Ratio = Current Assets ÷ Current Liabilities</div>
+                <p>Interpretation: A ratio $> 1.0$ indicates that the company has more current assets than short-term liabilities (good liquidity).</p>
+            </div>
+
+            <div class="card" data-keywords="book value market value historical accounting price">
+                <h3>3. Book Value vs. Market Value</h3>
+                <p><strong>Book Value:</strong> Historical accounting value based on balance sheet costs minus depreciation.</p>
+                <p><strong>Market Value:</strong> Current trading price in the open market reflecting forward-looking expectations.</p>
+                <p><strong>Key Difference:</strong> Book value looks backward at historical accounting costs; Market value looks forward, reflecting current market expectations and future cash-flow potential.</p>
+            </div>
+
+            <div class="card" data-keywords="intrinsic value future cash flows undervalue overvalue">
+                <h3>4. Intrinsic Value Based on Future Cash Flows</h3>
+                <p>The true economic value of an asset calculated as the present value of all expected future cash flows.</p>
+                <p><em>- Rule:</em> If Market Price < Intrinsic Value : <strong>Undervalued</strong>. If Market Price > Intrinsic Value : <strong>Overvalued</strong>.</p>
+            </div>
+
+            <div class="card" data-keywords="shareholder wealth maximization primary goal management stock price">
+                <h3>5. Concept of Shareholder Wealth Maximization</h3>
+                <p>The fundamental objective of corporate financial management is to <strong>maximize long-term shareholder value</strong>(represented by the stock price).</p>
+                <p><strong>- Why focus on stock price?</strong> Stock prices reflect current performance as well as market expectations
+                    regarding future
+                    profitability, risk, and growth.</p>
+            </div>
+
+            <div class="card" data-keywords="shareholder wealth maximization primary goal management stock price">
+                <h3>6. Primary Goal of Management in Finance</h3>
+                <p><strong>Goal:</strong> To maximize the current value per share of existing stock (or maximize long-term shareholder wealth).</p>
+                <p><strong>Secondary Goals:</strong> Increasing market share, boosting revenue, or cutting costs are only useful if they serve the ultimate
+                goal of enhancing shareholder value without creating excessive risk.</p>
+            </div>
+
+            <div class="card" data-keywords="agency problem conflict manager principal shareholder costs">
+                <h3>7. Agency Problem</h3>
+                <p>Conflict of interest between principals (shareholders) and agents (managers).</p>
+                <p><strong>Agency Costs:</strong> Costs incurred to align managers' goals with shareholders' goals (e.g., performance bonuses, stock
+                options, auditing fees, or board oversight).</p>
+            </div>
+
+            <div class="card" data-keywords="financial management investment international budgeting capital working capital">
+                <h3>8. Financial Management, Investment, and International Management</h3>
+                <ul>
+                    <li><strong>Financial Management:</strong> Decisions on acquiring assets (investing) and raising funds (financing) to maximize firm value.</li>
+                    <li><strong>Investment Management:</strong> Managing portfolios of securities, assessing risk/return profiles, and executing asset allocation.</li>
+                    <li><strong>International Management:</strong> Managing financial decisions across foreign currencies, international tax rules, political risks, and global capital
+                    markets.</li>
+                </ul>
+            </div>
+
+            <div class="card" data-keywords="net income cash flows accrual accounting statement">
+                <h3>9. Net Income vs. Cash Flows</h3>
+                <p><strong>Net Income:</strong> Accounting profit shown on the Income Statement calculated using <strong>accrual accounting</strong> (Revenue earned $-$ Expenses
+                incurred). Includes non-cash expenses like depreciation.</p>
+                <p><strong>Cash Flows:</strong> Actual cash coming in (inflow) and going out (outflow).</p>
+                <p><strong>Key Rule:</strong> Net Income does not equal cash. A company can be profitable on paper (high Net Income) but run out of cash if
+                receivables are uncollected.</p>
+            </div>
+
+            <div class="card" data-keywords="stockholder bondholder equity debt return risk voting">
+                <h3>10. Stockholder vs. Bondholder</h3>
+                <table>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Stockholder (Equity)</th>
+                        <th>Bondholder (Debt)</th>
+                    </tr>
+                    <tr>
+                        <td>Role</td>
+                        <td>Partial owner of the firm</td>
+                        <td>Creditor / Lender of the firm</td>
+                    </tr>
+                    <tr>
+                        <td>Return</td>
+                        <td>Dividends & Capital Gains (Variable)</td>
+                        <td>Fixed Coupon Interest</td>
+                    </tr>
+                    <tr>
+                        <td>Risk & Priority</td>
+                        <td>Higher risk (residual claim)</td>
+                        <td>Lower risk (priority claim)</td>
+                    </tr>
+                    <tr>
+                        <td>Voting Rights</td>
+                        <td>Yes</td>
+                        <td>No</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="card" data-keywords="budgeting capital working capital">
+                <h3>11. The Study of Financial Management</h3>
+                <p>Focuses on three main managerial decisions:</p>
+                <ul>
+                    <li><strong>Capital Budgeting:</strong> Which long-term investments/projects should the firm undertake?</li>
+                    <li><strong>Capital Structure:</strong> How should the firm finance these investments (Debt vs. Equity)?</li>
+                    <li><strong>Working Capital Management:</strong> How does the firm manage day-to-day short-term operating assets and liabilities?</li>
+                </ul>
+            </div>
+
+
+            <!-- SECTION 2 -->
+            <h2 id="risk-return" class="section-title">2. Capital Structure, Risk & Return</h2>
+
+            <div class="card" data-keywords="cost of debt equity tax shield rd re">
+                <h3>12. Cost of Debt vs. Cost of Equity</h3>
+                <p><strong>Cost of Debt (r_d or K_d):</strong> The effective rate a company pays on its borrowed funds (bonds, loans). It is lower than equity because debt has
+                priority in liquidation and offers tax benefits.</p>
+                <p><strong>Cost of Equity (r_e or K_e):</strong> The return required by equity investors to compensate for taking on business and financial risk. Equity is
+                non-tax-deductible and more expensive.</p>
+            </div>
+
+            <div class="card" data-keywords="cost of debt equity tax shield rd re">
+                <h3>12.1. Cost of Debt is Tax Shields</h3>
+                <p><strong>Concept:</strong> Interest payments on debt are <strong>tax-deductible,</strong> creating an interest tax shield that lowers the firm's tax bill.</p>
+                <div class="formula-box">After-Tax Cost of Debt = r_d × (1 - Tax Rate)</div>
+            </div>
+
+            <div class="card" data-keywords="capm framework beta risk free rate market risk premium expected return cost of equity">
+                <h3>13. CAPM Only Forecasting Systematic Risks (Beta)</h3>
+                <p>CAPM explains the relationship between systematic risk and expected return, determining the Cost of Equity (Re)
+                    for WACC.</p>
+            
+                <div class="formula-box">E(Ri) = Rf + Beta × [ E(Rm) - Rf ]</div>
+            
+                <ul>
+                    <li><strong>Rf (Risk-Free Rate):</strong> Return on zero-default-risk government bonds.</li>
+                    <li><strong>Beta (β):</strong> Measures sensitivity to overall market movements (systematic risk).</li>
+                    <li><strong>Rm (Market Return):</strong> Expected return of the overall market.</li>
+                    <li><strong>[Rm - Rf] (Market Risk Premium):</strong> Extra return required for taking market risk.</li>
+                </ul>
+            </div>
+
+            <div class="card" data-keywords="systematic risk unsystematic risk diversifiable market">
+                <h3>14. Systematic Risk vs. Unsystematic Risk</h3>
+                <p><strong>Systematic Risk (Market / Non-diversifiable Risk):</strong> Risk factors that affect the entire market (e.g., inflation, interest rate changes, recessions, wars). Measured by Beta
+                ($\beta$). Cannot be eliminated by diversification.</p>
+                <p><strong>Unsystematic Risk (Firm-specific / Diversifiable Risk):</strong> Risk unique to a single company or industry (e.g., labor strikes, lawsuits, CEO resignation). Can be eliminated through
+                diversification.</p>
+            </div>
+
+            <div class="card"
+                data-keywords="wacc market value capm relationship weighted average cost of capital debt preferred stock equity">
+                <h3>15 & 15.1. WACC (Weighted Average Cost of Capital)</h3>
+                <p>WACC is the average rate of return a company must earn on its investments to satisfy all providers of capital
+                    (Debt, Preferred Stock, and Common Equity).</p>
+            
+                <p><strong>Full Formula (3 Components):</strong></p>
+                <div class="formula-box">WACC = [ (D/V) × (1 - Tc) × r_debt ] + [ (P/V) × r_preferred ] + [ (E/V) × r_equity ]</div>
+            
+                <p><strong>Standard Formula (Debt & Equity Only):</strong></p>
+                <div class="formula-box">WACC = (E/V × Re) + [ (D/V) × Rd × (1 - T) ]</div>
+            
+                <ul>
+                    <li><strong>V</strong> = D + P + E (Total Capital Value)</li>
+                </ul>
+                <p><strong>Relationship Between CAPM and WACC:</strong></p>
+                <ul>
+                    <li><strong>CAPM</strong> calculates the <strong>Cost of Equity (r_e)</strong>, which represents the equity component inside the <strong>WACC</strong> formula.</li>
+                    <li>WACC aggregates both the Cost of Equity (via CAPM) and the After-Tax Cost of Debt according to the company's capital
+                    structure weights.</li>
+                </ul>
+
+            </div>
+
+
+            <!-- SECTION 3 -->
+            <h2 id="valuation" class="section-title">3. Valuation, Rates & NPV</h2>
+
+            <div class="card" data-keywords="npv net present value decision rule">
+                <h3>16. Net Present Value (NPV)</h3>
+                <p>The difference between the present value of future cash inflows and the initial outlay/cost.</p>
+                <div class="formula-box">NPV = Σ CF_t / (1 + t)t</div>
+                <p><em>Decision Rule:</em></p>
+                <ul>
+                    <li>NPV > 0 : Accept project (adds value to the firm).</li>
+                    <li>NPV < 0 : Reject project (destroys value).</li>
+                </ul>
+            </div>
+
+            <div class="card" data-keywords="expected rate of return standard deviation risk free rate nominal real risk premium">
+                <h3>17. Expected Rate of Return, Standard Deviation, and Risk-Free Rate</h3>
+                <p><strong>Expected Rate of Return:</strong> The weighted average of all possible returns based on their probability of occurrence.</p>
+                <p><strong>Standard Deviation (σ):</strong> A statistical measure of total risk or volatility around expected returns.</p>
+                <p><strong>Risk-Free Rate (R_f):</strong> The return on an investment with zero default risk (typically long-term government bonds, such as U.S. Treasury bills).</p>
+            </div>
+
+            <div class="card" data-keywords="expected rate of return standard deviation risk free rate nominal real risk premium">
+                <h3>18. Nominal Rate vs. Real Rate vs. Risk Premium</h3>
+                <p><strong>Nominal Rate:</strong> The stated or quoted interest rate unadjusted for inflation.</p>
+                <p><strong>Formula (Fisher Effect / Component breakdown):</strong></p>
+                <div class="formula-box">Nominal Rate = Risk-Free Rate (real rate + inflation rate) + Risk Premium</div>
+                <ul>
+                    <li><strong>Real Rate:</strong> Compensation for postponing consumption (time value of money without inflation).</li>
+                    <li><strong>Risk Premium:</strong> Additional return required by investors for taking on additional default, liquidity, or market risk.</li>
+                </ul>
+            </div>
+
+            <div class="card" data-keywords="undervalue overvalue security market line sml">
+                <h3>19. Undervalued or Overvalued Compare with Security Market Line (SML)</h3>
+                <p><strong>Security Market Line (SML):</strong> A graphical representation of CAPM plotting Expected Return against Beta (β).</p>
+                <ul>
+                    <li><strong>Above SML:</strong> Undervalued (offers higher return than required for its risk).</li>
+                    <li><strong>Below SML:</strong> Overvalued (offers lower return than required for its risk).</li>
+                    <li><strong>On the SML:</strong> Fairly priced.</li>
+                </ul>
+            </div>
+    </main>
+
+    <!-- Simple Search Script -->
+    <script>
+        function filterCards() {
+            let input = document.getElementById('searchBox').value.toLowerCase();
+            let cards = document.getElementsByClassName('card');
+
+            for (let i = 0; i < cards.length; i++) {
+                let keywords = cards[i].getAttribute('data-keywords') || '';
+                let text = cards[i].innerText.toLowerCase();
+
+                if (text.includes(input) || keywords.includes(input)) {
+                    cards[i].style.display = "";
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
